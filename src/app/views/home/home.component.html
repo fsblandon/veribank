@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="buttons">
+        <div class="row h-100 justify-content-center align-items-center elm">
+            <button
+                class="btn btn-primary"
+                [routerLink]="['/deposit']" 
+                routerLinkActive="router-link-active">
+                Deposit
+            </button>
+        </div>
+        <div class="row h-100 justify-content-center align-items-center elm">
+            <button
+                class="btn btn-primary"
+                [routerLink]="['/withdraw']" 
+                routerLinkActive="router-link-active">
+                Withdraw
+            </button>
+        </div>
+        <div class="row h-100 justify-content-center align-items-center elm">
+            <button
+                class="btn btn-primary"
+                [routerLink]="['/transaction']" 
+                routerLinkActive="router-link-active">
+                Transaction
+            </button>
+        </div>
+    </div>
+</div>

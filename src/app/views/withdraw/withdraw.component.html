@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card text-center" style="margin-top: 20%;">
+        <div class="card-header">
+            <h5 class="card-title">Withdraw from your account</h5>
+        </div>
+        <div class="card-body">
+            <form   [formGroup]="withdrawForm" 
+                    (ngSubmit)="withdraw()">
+                <div class="form-group">
+                    <input  type="number" 
+                            class="form-control"
+                            formControlName="value"
+                            placeholder="Enter amount to withdraw">
+                </div>
+            </form>
+        </div>
+        <div class="form-group mx-auto">
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="submit"
+                            class="btn btn-primary"
+                            [disabled]="!withdrawForm.valid"
+                            (click)="withdraw()">
+                        Accept
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button"
+                        (click)="toCancel()"
+                        class="btn btn-primary">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div *ngIf="withdrawDone">
+        <app-toast [mode]="'Withdraw'"></app-toast>
+    </div>
+</div>
